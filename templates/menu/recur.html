@@ -1,0 +1,13 @@
+{% for menu in instance %}
+    {% if path_list|last == menu.slug %}
+        <li><span><a href="{% url 'menu' menu_slug menu.url %}" style="cursor: text; pointer-events: none; color: chocolate; "><em class="marker open"></em>{{ menu.name }}</a></span>
+    {% else %}
+        <li><span><a href="{% url 'menu' menu_slug menu.url %}"><em class="marker open"></em>{{ menu.name }}</a></span>
+    {% endif %}
+        {% if menu.slug in path_list %}
+            <ul>
+                {% include "menu/recur.html" with instance=menu.children %}
+            </ul>
+        {% endif %}
+    </li>
+{% endfor %}
