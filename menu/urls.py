@@ -1,6 +1,5 @@
 import django
-from django.urls import path, include, re_path
-from django.contrib.auth import views
+from django.urls import path
 
 from .views import main, menu_view, main_view
 

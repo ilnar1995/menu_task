@@ -57,9 +57,9 @@ class ModelMixin():
         return slug
 
 def item_tree(a):
-    """создание дерева коментариев"""
+    """создание дерева элементов"""
     def tree(c):
-        """запись коментов в поле для детей у родительского комента"""
+        """запись коментов в поле для детей у родительского элемента"""
         for f in c:
             if f.get("children"):                               # если коментарии имеет детей
                 for item in f.get("children"):                  # проход по списку детей
@@ -78,6 +78,7 @@ def item_tree(a):
         return c
 
     def add_url(c, url=None):
+        """добавление url ключей в словарь"""
         for kkk in c:
             if url:
                 kkk["url"] = url + '/' + kkk.get('slug')

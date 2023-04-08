@@ -1,10 +1,7 @@
 from django.shortcuts import render
 
 # Create your views here.
-import os
-
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseRedirect
 from .models import ModelMixin, Menu
 
 
